@@ -1,0 +1,181 @@
+/* =====================================================================
+   UniTrade – theme.css
+   Global design tokens + the SHARED classes used by common components
+   (Button.jsx, Input.jsx). Page/component specific styles live in
+   their own files (Navbar.css, Register.css, ...), scoped by a parent class.
+   ===================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap");
+
+:root {
+  /* Brand */
+  /* Palette taken from the approved UniTrade mockup */
+  --navy: #1f395c;       /* navbar */
+  --navy-light: #2f5688;
+  --gold: #d6ae59;       /* buttons, borders */
+  --gold-dark: #c29a40;  /* hover */
+  --sky: #9dbfe2;        /* header banner, active tab */
+  --sky-soft: #e8f0fa;
+
+  /* Surfaces & text */
+  --bg: #f3f6fa;
+  --surface: #ffffff;
+  --text: #16253d;
+  --text-muted: #566377;
+  --border: #d7e0ec;
+
+  /* Feedback */
+  --danger: #c62828;
+  --danger-bg: #fdecec;
+  --success: #1b7f4b;
+  --success-bg: #e7f6ee;
+
+  /* Shape & spacing */
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow: 0 10px 30px rgba(31, 57, 92, 0.12);
+  --focus-ring: 0 0 0 3px rgba(214, 174, 89, 0.5);
+  --font: "Cairo", "Segoe UI", Tahoma, sans-serif;
+}
+
+/* Base (only what the whole app needs) */
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--navy-light);
+}
+
+/* ---------- Shared: card ---------- */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* ---------- Shared: Button.jsx  (.btn-gold .btn-block) ---------- */
+.btn-gold {
+  display: inline-block;
+  padding: 10px 22px;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: var(--gold);
+  color: var(--navy);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.btn-gold:hover:not(:disabled) {
+  background: var(--gold-dark);
+}
+
+.btn-gold:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.btn-gold:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.btn-gold:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  padding: 12px 22px;
+}
+
+/* ---------- Shared: Input.jsx  (.field .field-control ...) ---------- */
+.field {
+  margin-bottom: 18px;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.field-control {
+  position: relative;
+}
+
+.field input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.field input::placeholder {
+  color: #98a1b3;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: var(--gold-dark);
+  box-shadow: var(--focus-ring);
+}
+
+.field input.has-error {
+  border-color: var(--danger);
+  background: var(--danger-bg);
+}
+
+.field input.with-toggle {
+  padding-inline-end: 70px; /* room for the show/hide button */
+}
+
+.field .toggle {
+  position: absolute;
+  inset-inline-end: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 4px 10px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--navy-light);
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.field .toggle:hover {
+  background: var(--bg);
+}
+
+.field .toggle:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.field .error {
+  margin: 6px 0 0;
+  color: var(--danger);
+  font-size: 0.85rem;
+}
