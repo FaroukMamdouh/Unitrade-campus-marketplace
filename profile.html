@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UniTrade - لوحة البائع والملف الشخصي</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="profilestyle.css" />
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="nav-right">
+      <a href="#" class="logo">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c9a23f" stroke-width="2.2">
+          <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+          <path d="M6 12v5c3 3 9 3 12 0v-5" stroke="#ffffff"/>
+        </svg>
+        <span>UniTrade</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#">الرئيسية</a></li>
+        <li><a href="#">تصفح الفئات</a></li>
+        <li><a href="#">رسائلي</a></li>
+      </ul>
+    </div>
+
+    <div class="nav-left">
+      <div class="nav-search">
+        <input type="text" placeholder="ابحث عن كتب، أدوات..." />
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+      </div>
+      <button class="notif-btn" title="الإشعارات">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
+        </svg>
+      </button>
+      <div class="user-menu">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="Ahmed H." />
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+
+    <!-- Seller Profile Banner -->
+    <section class="profile-banner">
+      <div class="seller-main">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=250&auto=format&fit=crop&q=80" alt="Ahmed H." class="seller-avatar" />
+        <div class="seller-details">
+          <div class="seller-name-row">
+            <h1 class="seller-name">Ahmed H.</h1>
+            <span class="badge-student">✓ طالب موثق</span>
+            <span class="badge-seller">🏅 بائع موثوق</span>
+          </div>
+          <p class="seller-faculty">كلية الهندسة - جامعة القاهرة</p>
+          <p class="seller-joined">عضو منذ 2021</p>
+          <div class="seller-rating">
+            <span>4.9</span>
+            <span class="stars">★★★★★</span>
+            <span>(24 تقييم)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="banner-actions">
+        <div class="stats-stack">
+          <div class="stat-pill stat-gold" id="activeCountPill">الإعلانات النشطة: 4</div>
+          <div class="stat-pill stat-white">المبيعات: 18</div>
+          <div class="stat-pill stat-gold">تقييم البائع: 4.9</div>
+        </div>
+        <button class="btn-add-listing" id="addListingBtn">إضافة إعلان جديد</button>
+      </div>
+    </section>
+
+    <!-- Tabs & Content Panel -->
+    <section class="content-panel">
+      <div class="tabs-bar">
+        <button class="tab-btn active" id="tabListings" data-tab="listings">الإعلانات النشطة (4)</button>
+        <button class="tab-btn" id="tabReviews" data-tab="reviews">آراء الطلاب والمراجعات (24)</button>
+      </div>
+
+      <!-- Active Listings Grid -->
+      <div class="products-grid" id="listingsView">
+        <!-- Card 1 -->
+        <div class="product-card" data-title="لاب توب MacBook Pro">
+          <div class="product-img-box">
+            <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=300&auto=format&fit=crop&q=80" alt="MacBook Pro" />
+          </div>
+          <h3 class="product-title">لاب توب MacBook Pro</h3>
+          <div class="product-price">18,500 EGP</div>
+          <div class="product-condition">حالة ممتازة</div>
+          <div class="card-actions">
+            <button class="btn-card edit-btn">تعديل</button>
+            <button class="btn-card delete-btn">حذف</button>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="product-card" data-title="كتاب Calculus 9th">
+          <div class="product-img-box">
+            <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=300&auto=format&fit=crop&q=80" alt="Calculus 9th" />
+          </div>
+          <h3 class="product-title">كتاب Calculus 9th</h3>
+          <div class="product-price">450 EGP</div>
+          <div class="product-condition">حالة جيدة</div>
+          <div class="card-actions">
+            <button class="btn-card edit-btn">تعديل</button>
+            <button class="btn-card delete-btn">حذف</button>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="product-card" data-title="آلة حاسبة FX-991 Casio">
+          <div class="product-img-box">
+            <img src="https://images.unsplash.com/photo-1587145820266-a5951ee6f620?w=300&auto=format&fit=crop&q=80" alt="Casio FX-991" />
+          </div>
+          <h3 class="product-title">آلة حاسبة FX-991 Casio</h3>
+          <div class="product-price">350 EGP</div>
+          <div class="product-condition">مستعمل</div>
+          <div class="card-actions">
+            <button class="btn-card edit-btn">تعديل</button>
+            <button class="btn-card delete-btn">حذف</button>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="product-card" data-title="مكتب مذاكرة صغير">
+          <div class="product-img-box">
+            <img src="https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=300&auto=format&fit=crop&q=80" alt="مكتب مذاكرة صغير" />
+          </div>
+          <h3 class="product-title">مكتب مذاكرة صغير</h3>
+          <div class="product-price">600 EGP</div>
+          <div class="product-condition">حالة جيدة</div>
+          <div class="card-actions">
+            <button class="btn-card edit-btn">تعديل</button>
+            <button class="btn-card delete-btn">حذف</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reviews Section -->
+      <div class="reviews-list" id="reviewsView">
+        <div class="review-card">
+          <div class="review-header">
+            <span>مريم ع. (كلية العلوم)</span>
+            <span class="stars">★★★★★</span>
+          </div>
+          <p>سريع وخدوم، الجهاز بحالة ممتازة ومطابق للوصف تماماً وتم التسليم في المكتبة المركزية.</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <span>خالد ب. (كلية الهندسة)</span>
+            <span class="stars">★★★★★</span>
+          </div>
+          <p>أنصح بالتعامل معه، محترم جداً والتزم بالموعد.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="profilescript.js"></script>
+</body>
+</html>
