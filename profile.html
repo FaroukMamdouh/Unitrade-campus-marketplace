@@ -40,13 +40,38 @@
           <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
         </svg>
       </button>
-      <div class="user-menu">
-        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="Ahmed H." />
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </div>
+      
+      <!-- User Dropdown Menu (Profile & Login) -->
+<div class="user-dropdown" id="userDropdown">
+  <button class="user-menu-btn" id="userMenuBtn" type="button" aria-expanded="false">
+    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="Ahmed H." />
+    <svg class="arrow-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5">
+      <polyline points="6 9 12 15 18 9"/>
+    </svg>
+  </button>
+
+  <div class="user-dropdown-menu" id="userDropdownMenu">
+    <div class="dropdown-header">
+      <strong>Ahmed H.</strong>
+      <span>ahmed.h@eng.cu.edu.eg</span>
     </div>
+    <a href="dashboard.html" class="dropdown-item">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+        <circle cx="12" cy="7" r="4"/>
+      </svg>
+      <span>الملف الشخصي (Profile)</span>
+    </a>
+    <a href="login.html" class="dropdown-item login-item">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
+        <polyline points="10 17 15 12 10 7"/>
+        <line x1="15" y1="12" x2="3" y2="12"/>
+      </svg>
+      <span>تسجيل الدخول (Login)</span>
+    </a>
+  </div>
+</div>
   </header>
 
   <!-- Main Content -->

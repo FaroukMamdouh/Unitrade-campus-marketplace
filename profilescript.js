@@ -24,6 +24,24 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("tabListings").textContent = `الإعلانات النشطة (${remaining})`;
     document.getElementById("activeCountPill").textContent = `الإعلانات النشطة: ${remaining}`;
   }
+  // Toggle Profile & Login Dropdown
+const userMenuBtn = document.getElementById("userMenuBtn");
+const userDropdownMenu = document.getElementById("userDropdownMenu");
+
+if (userMenuBtn && userDropdownMenu) {
+  userMenuBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const isOpen = userDropdownMenu.classList.toggle("open");
+    userMenuBtn.setAttribute("aria-expanded", isOpen);
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!userDropdownMenu.contains(e.target) && !userMenuBtn.contains(e.target)) {
+      userDropdownMenu.classList.remove("open");
+      userMenuBtn.setAttribute("aria-expanded", "false");
+    }
+  });
+}
 
   tabListings.addEventListener("click", () => switchTab("listings"));
   tabReviews.addEventListener("click", () => switchTab("reviews"));
