@@ -260,7 +260,7 @@ body {
   display: flex;
   align-items: center;
   gap: 18px;
-  direction: ltr;
+  direction: rtl;
   flex: 1;
   min-width: 0;
 }
