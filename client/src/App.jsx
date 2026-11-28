@@ -1,25 +1,32 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Register from "./pages/Register";
 import "./styles/theme.css";
 import Login from "./pages/Login";
+import Profile from "./pages/profile";
 
-// Temporary placeholder until each pair pushes its real page
-const Placeholder = ({ title }) => (
-  <h1 style={{ padding: 24, color: "var(--navy)" }}>{title} (قريبًا)</h1>
-);
+function AppContent() {
+  const location = useLocation();
+  const isProfilePage =
+    location.pathname === "/" || location.pathname.toLowerCase() === "/profile";
+
+  return (
+    <>
+      {!isProfilePage && <Navbar />}
+      <Routes>
+        <Route path="/" element={<Profile />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </>
+  );
+}
 
 export default function App() {
   return (
     <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Register />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login/>} />
-        <Route path="/profile" element={<Placeholder title="الملف الشخصي" />} />
-        <Route path="*" element={<Placeholder title="هذه الصفحة" />} />
-      </Routes>
+      <AppContent />
     </BrowserRouter>
   );
 }
